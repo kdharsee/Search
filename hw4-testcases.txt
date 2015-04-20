@@ -1,0 +1,31 @@
+﻿Assignment 4 - Search
+
+
+1. No input words given to OR-search or to AND-search, generally wrong input
+cmd input: “Hello!” 
+Expected Value: “Invalid String Query Usage: (so|sa)(term)[term term term…]”
+Actual Value: “Invalid String Query Usage: (so|sa)(term)[term term term…]”
+2. At least one file has at least one of the input words in OR-search.
+cmd input: “so testing mumbo” 
+Expected Value: /FilesDirectory/file2.txt, RecursiveDirectory/filefile1.txt, FilesDirectory/file1.txt
+Actual Value: /FilesDirectory/file2.txt, RecursiveDirectory/filefile1.txt, FilesDirectory/file1.txt
+3. No file contains multiple input words in OR-search.
+cmd input: “so mumbo jumbo”
+Expected Value: Empty line
+Actual Value: Empty line
+4. No file contains multiple input words in AND-search.
+cmd input: “sa mumbo jumbo”
+Expected Value: Empty line
+Actual Value: Empty line
+5. None of the files have all input words, put some of the files have at least one input word in AND-search.
+cmd input: “sa testing case”
+Expected Value: Empty line
+Actual Value: Empty line
+6. One file contains all input words in AND-search.
+cmd input: “sa case letters”
+Expected Value: RecursiveDirectory/case2.txt
+Actual Value:  RecursiveDirectory/case2.txt
+7. Many files contains all input words in AND-search.
+cmd input: “sa testing this”
+Expected Value: FilesDirectory/case2.txt, RecursiveDirectory/filefile1.txt, RecursiveDirectory/file1.txt, FilesDirectory/file1.txt
+Actual Value: FilesDirectory/case2.txt, RecursiveDirectory/filefile1.txt, RecursiveDirectory/file1.txt, FilesDirectory/file1.txt
